@@ -2,6 +2,8 @@
 
 [![made-with-Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg)](http://commonmark.org)
 
+[Deployed Application](https://peaceful-anchorage-10949.herokuapp.com/)
+
 ## Description
 
 This application is used to track your workouts and give you your weekly stats! Enter in your activity, and it will populate into charts to display all of your effort. Let's get moving!
