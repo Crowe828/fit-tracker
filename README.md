@@ -1,29 +1,57 @@
-# Fit Tracker
+# Fit Buddy
 
-For this assignment, you'll create a workout tracker. You have already been provided with the front end code in the `Develop` folder. This assignment will require you to create Mongo database with a Mongoose schema and handle routes with Express.
+[![made-with-Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg)](http://commonmark.org)
 
-## User Story
+## Description
 
-* As a user, I want to be able to view create and track daily workouts. I want to be able to log multiple exercises in a workout on a given day. I should also be able to track the name, type, weight, sets, reps, and duration of exercise. If the exercise is a cardio exercise, I should be able to track my distance traveled.
+This application is used to track your workouts and give you your weekly stats! Enter in your activity, and it will populate into charts to display all of your effort. Let's get moving!
 
-## Business Context
+## Table of Contents
 
-A consumer will reach their fitness goals more quickly when they track their workout progress.
+- [Images](#images)
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Questions](#tests)
 
-## Acceptance Criteria
+## Images
 
-When the user loads the page, they should be given the option to create a new workout or continue with their last workout.
+- Homepage:
+  ![Fit Tracker](https://github.com/Crowe828/fit-tracker/blob/main/public/images/fit-tracker-home.png)
 
-The user should be able to:
+- Add a workout:
+  ![Fit Tracker](https://github.com/Crowe828/fit-tracker/blob/main/public/images/fit-tracker-new.png)
 
-  * Add exercises to a previous workout plan.
+- Stats:
+  ![Fit Tracker](https://github.com/Crowe828/fit-tracker/blob/main/public/images/fit-tracker-stats.png)
 
-  * Add new exercises to a new workout plan.
+## Installation
 
-  * View the combined weight of multiple exercises on the `stats` page.
+git clone https://github.com/Crowe828/fit-tracker.git
 
-To deploy an application with a MongoDB database to Heroku, you'll need to set up a MongoDB Atlas account and connect a database from there to your application. Be sure to use the following guides for support:
+## Usage
 
-  * [Set Up MongoDB Atlas](./Important/MongoAtlas-Setup.md)
+Once you load the main page, you can either a. enter a new workout or b. update an existing workout. If you click on "dashboard" it will take you to the stats page, where you can see all of your stats for the week.
 
-  * [Deploy with Heroku and MongoDB Atlas](./Important/MongoAtlas-Deploy.md)
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+Please make sure to update tests as appropriate.
+
+## Tests
+
+```
+console.log(test);
+```
+
+The console will display the word 'test'
+
+## Questions
+
+If you would like to learn more, feel free to check out my GitHub or send me an email anytime.
+
+- [GitHub](https://github.com/Crowe828)
+- [Repo](https://github.com/Crowe828/fit-tracker)
+- [Email Me](mailto:crowe828@gmail.com?subject=Nice%20README%20Generator%20Dude)

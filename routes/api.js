@@ -1,7 +1,7 @@
 const router = require("express").Router();
-const Workout = require("../models/workout");
+const Workout = require("../models/workout.js");
 
-// Create a new Workout
+// Create a new workout
 router.post("/api/workouts", (req, res) => {
   Workout.create({})
     .then((dbWorkout) => {
@@ -12,12 +12,12 @@ router.post("/api/workouts", (req, res) => {
     });
 });
 
-// Update an existing workout with a new exercise
+// Add a new exercise to an existing workout
 router.put("/api/workouts/:id", ({ body, params }, res) => {
   Workout.findByIdAndUpdate(
     params.id,
     { $push: { exercises: body } },
-    // Make sure added exercies meet the schema requirements
+    // Make sure the new exercise meets the schema requirements
     { new: true, runValidators: true }
   )
     .then((dbWorkout) => {
@@ -28,7 +28,7 @@ router.put("/api/workouts/:id", ({ body, params }, res) => {
     });
 });
 
-// Get the last workout entered
+// Get all of the workouts stored in the db
 router.get("/api/workouts", (req, res) => {
   Workout.find()
     .then((dbWorkouts) => {
@@ -39,7 +39,7 @@ router.get("/api/workouts", (req, res) => {
     });
 });
 
-// Get the stats, add them together, and display on the stats page
+// Combine the workouts to display the stats
 router.get("/api/workouts/range", (req, res) => {
   Workout.find({})
     .limit(7)
@@ -52,8 +52,8 @@ router.get("/api/workouts/range", (req, res) => {
     });
 });
 
-// Delete old workouts
-router.delete("/api/workouts", ({ boyd }, res) => {
+// Delete a workout
+router.delete("/api/workouts", ({ body }, res) => {
   Workout.findByIdAndDelete(body.id)
     .then(() => {
       res.json(true);
