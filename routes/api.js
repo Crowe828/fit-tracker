@@ -34,7 +34,7 @@ router.get("/api/workouts", (req, res) => {
     });
 });
 
-// View the combined weight of multiple exercises on the `stats` page.
+// Get the stats, add them together, and display on the stats page
 router.get("/api/workouts/range", (req, res) => {
   Workout.find({})
     .sort({ duration: -1 })
