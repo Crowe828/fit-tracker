@@ -14,7 +14,12 @@ router.post("/api/workouts", (req, res) => {
 
 // Update an existing workout with a new exercise
 router.put("/api/workouts/:id", ({ body, params }, res) => {
-  Workout.findByIdAndUpdate(params.id, { $push: { exercises: body } })
+  Workout.findByIdAndUpdate(
+    params.id,
+    { $push: { exercises: body } },
+    // Make sure added exercies meet the schema requirements
+    { new: true, runValidators: true }
+  )
     .then((dbWorkout) => {
       res.json(dbWorkout);
     })
@@ -37,9 +42,21 @@ router.get("/api/workouts", (req, res) => {
 // Get the stats, add them together, and display on the stats page
 router.get("/api/workouts/range", (req, res) => {
   Workout.find({})
-    .sort({ duration: -1 })
+    .limit(7)
     .then((dbWorkouts) => {
+      console.log(dbWorkouts);
       res.json(dbWorkouts);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+});
+
+// Delete old workouts
+router.delete("/api/workouts", ({ boyd }, res) => {
+  Workout.findByIdAndDelete(body.id)
+    .then(() => {
+      res.json(true);
     })
     .catch((err) => {
       res.json(err);
